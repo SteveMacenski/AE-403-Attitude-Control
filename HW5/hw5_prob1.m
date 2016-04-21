@@ -11,7 +11,7 @@ x0 = [0.1 0]';
 v0 = 0;
 for j=1:length(wn)
 
-    t = linspace(0,900,1400);
+    t = linspace(0,900,400);
 
     k = [wn(j)^2*J 2*J/sqrt(2)*wn(j)];
     
@@ -25,11 +25,19 @@ for j=1:length(wn)
     figure(2) %u(t)
     plot(t,-k*x)
     hold on;
+
+%     for i=1:length(t)
+%         [t1,v] = ode45(@(t1,v) ((-k*x(:,i))./Jw),t,v0);
+%     end
+%     figure(5)
+%     plot(t1,v)
+%     hold on;
+%     title('blah')
     
-    %[t,v] = ode45(@(t,v) ((-k*x)./Jw),[0 900],v0);
-    %figure(3) %v(t)
-    %plot(t,v)
-    %hold on;
+%     [t1,v] = ode45(@(t1,v) ((-k*x)./Jw),[0 900],v0);
+%     figure(3) %v(t)
+%     plot(t,v)
+%     hold on;
 end
 figure(1)
 legend('theta wn=10e-2','theta wn=10e-1','theta wn=10e0','theta wn=10e1','theta wn=10e2')
