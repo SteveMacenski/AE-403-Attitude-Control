@@ -24,15 +24,30 @@ for i=1:length(t)
 end
 
 figure(1) %x(t)
-plot(t,x)
-hold on;
+plot(t,x(1,:));
 
+figure(2)
+plot(t,x(2,:));
+
+figure(3)
+plot(t,x(3,:));
 
 figure(1)
+legend('x1(t) - \theta_2')
+title('x1(t) - Steve Macenski - P2.c')
+
+figure(2)
+legend('x2(t) - \theta_2dot')
+title('x2(t) - Steve Macenski - P2.c')
+
+figure(3)
+legend('x3(t) - v_2')
+title('x3(t) - Steve Macenski - P2.c')
+
+figure(4)
+plot(t,x);
 legend('x1(t) - \theta_2','x2(t) - \theta_2dot','x3(t) - v_2')
 title('x(t) - Steve Macenski - P2.c')
-
-
 
 
 %% Animation and integration stuff 
@@ -67,7 +82,7 @@ pAngVel = [zeros(3,1) x0/norm(x0)];
 pAngMom = [zeros(3,1) J*x0/norm(J*x0)];
 
 % SETUP THE PLOT
-figure(2);
+figure(5);
 clf;
 axis(1.25*[-1 1 -1 1 -1 1]);
 axis equal;
