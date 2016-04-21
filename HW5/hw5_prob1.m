@@ -40,7 +40,7 @@ legend('u(t) wn=10e-2','u(t) wn=10e-1','u(t) wn=10e0','u(t) wn=10e1','u(t) wn=10
 title('u(t) - Steve Macenski - P1.d')
 
 % figure(3)
-% legend()
+% legend('v wn=10e-2','v wn=10e-1','v wn=10e0','v wn=10e1','v wn=10e2')
 % title('v(t) - Steve Macenski - P1.d')
 
 %% theta(t) v(t) u(t) for 1e: using LQR 
