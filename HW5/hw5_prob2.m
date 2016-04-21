@@ -1,7 +1,7 @@
 function hw5_prob2
 % animation video: https://youtu.be/GnYS6B8IOGI
 clc;
-%% theta(t) v(t) and u(t) 1d
+%% theta(t) v(t) and u(t) 2
 J1 = 12;
 J2 = 14;
 J3 = 8; 
