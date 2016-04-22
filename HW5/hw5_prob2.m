@@ -44,10 +44,10 @@ figure(3)
 legend('x3(t) - v_2')
 title('x3(t) - Steve Macenski - P2.c')
 
-figure(4)
-plot(t,x);
-legend('x1(t) - \theta_2','x2(t) - \theta_2dot','x3(t) - v_2')
-title('x(t) - Steve Macenski - P2.c')
+% figure(4)
+% plot(t,x);
+% legend('x1(t) - \theta_2','x2(t) - \theta_2dot','x3(t) - v_2')
+% title('x(t) - Steve Macenski - P2.c')
 
 
 %% Animation and integration stuff 

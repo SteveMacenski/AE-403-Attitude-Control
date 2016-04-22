@@ -26,18 +26,13 @@ for j=1:length(wn)
     plot(t,-k*x)
     hold on;
 
-%     for i=1:length(t)
-%         [t1,v] = ode45(@(t1,v) ((-k*x(:,i))./Jw),t,v0);
-%     end
-%     figure(5)
-%     plot(t1,v)
-%     hold on;
-%     title('blah')
+    for i=1:length(t)
+        v(:,i) = -k*(1/Jw)*inv(A-B*k)*(expm((A-B*k)*t(i))-eye(2))*x0;
+    end
     
-%     [t1,v] = ode45(@(t1,v) ((-k*x)./Jw),[0 900],v0);
-%     figure(3) %v(t)
-%     plot(t,v)
-%     hold on;
+    figure(3) %v(t)
+    plot(t,v)
+    hold on;
 end
 figure(1)
 legend('theta wn=10e-2','theta wn=10e-1','theta wn=10e0','theta wn=10e1','theta wn=10e2')
@@ -47,9 +42,9 @@ figure(2)
 legend('u(t) wn=10e-2','u(t) wn=10e-1','u(t) wn=10e0','u(t) wn=10e1','u(t) wn=10e2')
 title('u(t) - Steve Macenski - P1.d')
 
-% figure(3)
-% legend('v wn=10e-2','v wn=10e-1','v wn=10e0','v wn=10e1','v wn=10e2')
-% title('v(t) - Steve Macenski - P1.d')
+figure(3)
+legend('v wn=10e-2','v wn=10e-1','v wn=10e0','v wn=10e1','v wn=10e2')
+title('v(t) - Steve Macenski - P1.d')
 
 %% theta(t) v(t) u(t) for 1e: using LQR 
 R = [10^-2 10^-1 10^0 10^1 10^2];
@@ -69,29 +64,32 @@ for j=1:length(R)
     for i=1:length(t)
         x(:,i) = expm((A-B*k)*t(i))*x0;
     end
-    figure(3) %theta(t)
+    figure(4) %theta(t)
     plot(t,x(1,:))
     hold on;
     
-    figure(4) %u(t)
+    figure(5) %u(t)
     plot(t,-k*x)
     hold on;
     
-    %[t,v] = ode45(@(t,v) ((-k*x)./Jw),[0 900],v0);
-    %figure(5) %v(t)
-    %plot(t,v)
-    %hold on;
+    for i=1:length(t)
+        v(:,i) = -k*(1/Jw)*inv(A-B*k)*(expm((A-B*k)*t(i))-eye(2))*x0;
+    end
+    
+    figure(6) %v(t)
+    plot(t,v)
+    hold on;
 end 
-figure(3)
+figure(4)
 legend('theta r=10e-2','theta r=10e-1','theta r=10e0','theta r=10e1','theta r=10e2')
 title('\theta(t) - Steve Macenski - P1.e')
 
-figure(4)
+figure(5)
 legend('u(t) r=10e-2','u(t) r=10e-1','u(t) r=10e0','u(t) r=10e1','u(t) r=10e2')
 title('u(t) - Steve Macenski - P1.e')
 
-% figure(5)
-% legend()
-% title('v(t) - Steve Macenski - P1.e')
+figure(6)
+legend('v(t) r=10e-2','v(t) r=10e-1','v(t) r=10e0','v(t) r=10e1','v(t) r=10e2')
+title('v(t) - Steve Macenski - P1.e')
 
 

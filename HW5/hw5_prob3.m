@@ -38,11 +38,11 @@ for i=1:length(t)
     x(:,i) = expm((A-B*k)*t(i))*x0;
 end
 
-figure(1) %x(t)
-plot(t,x)
-hold on;
-legend('x1(t) - \theta_1','x2(t) - \theta_3','x3(t) - \theta_1dot','x4(t) - \theta_3dot','x5(t) - v_1','x6(t) - v_3')
-title('x(t) - Steve Macenski - P3.c');
+% figure(1) %x(t)
+% plot(t,x)
+% hold on;
+% legend('x1(t) - \theta_1','x2(t) - \theta_3','x3(t) - \theta_1dot','x4(t) - \theta_3dot','x5(t) - v_1','x6(t) - v_3')
+% title('x(t) - Steve Macenski - P3.c');
 
 figure(2) 
 plot(t,x(1,:));
