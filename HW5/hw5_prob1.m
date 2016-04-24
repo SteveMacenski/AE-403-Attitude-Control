@@ -11,7 +11,7 @@ x0 = [0.1 0]';
 v0 = 0;
 for j=1:length(wn)
 
-    t = linspace(0,900,400);
+    t = linspace(0,9,400);
 
     k = [wn(j)^2*J 2*J/sqrt(2)*wn(j)];
     
@@ -57,7 +57,7 @@ v0 = 0;
 Q = eye(2);
 for j=1:length(R)
 
-    t = linspace(0,900,1400);
+    t = linspace(0,9,1400);
 
     k = lqr(A,B,Q,R(j));
 
